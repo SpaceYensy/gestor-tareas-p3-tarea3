@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - TaskFlow</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="narrow center">
+    <h1>Iniciar sesión</h1>
+
+    <% if (error) { %>
+      <div class="alert alert-error"><%= error %></div>
+    <% } %>
+
+    <form action="/login" method="POST">
+      <label>Usuario</label>
+      <input type="text" name="username" required>
+
+      <label>Contraseña</label>
+      <input type="password" name="password" required>
+
+      <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+
+    <p class="muted">Este login es simulado, solo con fines demostrativos del flujo.</p>
+  </main>
+</body>
+</html>
