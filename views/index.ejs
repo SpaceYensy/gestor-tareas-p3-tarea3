@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskFlow - Mis Tareas</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav>
+    <span class="brand">TaskFlow</span>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/login">Login</a>
+  </nav>
+
+  <main>
+    <div class="header-row">
+      <h1>Mis tareas</h1>
+      <a class="btn btn-primary" href="/tasks/new">+ Nueva tarea</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Fecha límite</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tasks.forEach(task => { %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.description %></td>
+          <td><%= task.dueDateFormatted %></td>
+          <td><span class="badge badge-<%= task.status %>"><%= task.status %></span></td>
+          <td class="actions">
+            <a href="/tasks/<%= task.id %>/edit">Editar</a>
+            <form action="/tasks/<%= task.id %>?_method=DELETE" method="POST" style="display:inline">
+              <button class="link-btn" type="submit" onclick="return confirm('¿Eliminar esta tarea?')">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+        <% if (tasks.length === 0) { %>
+        <tr><td colspan="5" class="empty">No hay tareas todavía.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - TaskFlow</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav>
+    <span class="brand">TaskFlow</span>
+    <a href="/tasks">Tareas</a>
+  </nav>
+
+  <main>
+    <h1>Dashboard</h1>
+    <div class="cards">
+      <div class="card">
+        <span class="card-number"><%= stats.total %></span>
+        <span class="card-label">Total de tareas</span>
+      </div>
+      <div class="card">
+        <span class="card-number"><%= stats.pendientes %></span>
+        <span class="card-label">Pendientes</span>
+      </div>
+      <div class="card">
+        <span class="card-number"><%= stats.completadas %></span>
+        <span class="card-label">Completadas</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

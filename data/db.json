@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Configurar repositorio",
+      "description": "Inicializar el repo con Git Flow",
+      "dueDate": "2026-08-05",
+      "status": "pendiente"
+    },
+    {
+      "id": 2,
+      "title": "Diseñar dashboard",
+      "description": "Crear vista de resumen de tareas",
+      "dueDate": "2026-08-10",
+      "status": "completada"
+    }
+  ]
+}
